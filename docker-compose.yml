@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  httpdApache:
+    image: httpd
+
+    ports:
+      - "80:80"
+    volumes:
+      - /data/httpdApache:/usr/local/apache2/htdocs/
+    networks:
+      - minha-rede
+networks: 
+  minha-rede:
+    driver: bridge
